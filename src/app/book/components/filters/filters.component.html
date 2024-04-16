@@ -1,0 +1,17 @@
+<div class="filters">
+    <p>Filtrar</p>
+    <div class="list-filters">
+    @if(buttonOpen){
+      <button class="button-open" (click)="openListFilters()"> + </button>
+    }@else{
+      <button class="button-clouse" (click)="clouseListFilters()"> x </button>
+    }
+    @if (list) {
+      <ul>
+        @for (elem of listFilters; track elem.id) {
+          <li >{{elem.name}}</li>
+        }
+      </ul>
+    }
+    </div>
+</div>

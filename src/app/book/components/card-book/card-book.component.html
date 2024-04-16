@@ -1,0 +1,39 @@
+<div class="content-card"
+  genderBook
+  imgBook
+  publishedDate
+  title
+  authors
+  language
+>
+@defer(){
+  <div class="categorie-img">
+    @for (item of genderBook; track $index) {
+      <span>{{item}}</span>
+    }
+    <img [src]="imgBook"
+     height="250" width="150">
+    <div class="content-details">
+        <span>{{title}}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="author-price">
+    <div class="authors">
+      @for (author of authors; track $index) {
+        <p>{{author}}</p>
+      }
+    </div>
+    <div class="price">
+      <p>{{language | uppercase}}</p>
+      <span>{{publishedDate |date:'MM-YYYY' }}</span>
+    </div>
+  </div>
+
+}@placeholder(minimum 400ms){
+  <div class="categorie-img">
+    <app-loader></app-loader>
+  </div>
+}
+
+</div>

@@ -1,0 +1,42 @@
+<section >
+  <div class="content-head">
+      <div class="logo">
+        <h1>CatBook</h1>
+      </div>
+      <div class="navigation">
+        <ul>
+          <li>Menu</li>
+          <li>Login</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+  </div>
+<hr>
+  <div class="content-search-book">
+    <app-search
+    (onDebounce)="getValorInput($event)"
+    ></app-search>
+  </div>
+<hr>
+<div class="content-filters">
+  <app-filters></app-filters>
+
+  <div class="content-menu-books">
+      <app-menu-books></app-menu-books>
+  </div>
+  <div class="description">
+    <p>
+      Con "BookArt", buscamos celebrar la belleza y la magia de la lectura. Vivir
+      nuevas historias, compartir sus libros favoritos y
+      conectarse con una comunidad apasionada por la literatura. ¡Bienvenido al mundo de BookArt!
+    </p>
+  </div>
+</div>
+<hr>
+<div class="content-pages">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+</section>
