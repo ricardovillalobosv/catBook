@@ -8,7 +8,6 @@ import { MenuBooksComponent } from '../../components/menu-books/menu-books.compo
 import { ServiceBook } from '../../services/service-book.service';
 import { Item } from '../../interfaces/response-books-volumen';
 
-
 @Component({
   selector: 'book-layout',
   standalone: true,
@@ -21,24 +20,19 @@ import { Item } from '../../interfaces/response-books-volumen';
     MenuBooksComponent,
   ],
   templateUrl: './book-layout.component.html',
-  styleUrl: './book-layout.component.css'
+  styleUrl: './book-layout.component.css',
 })
 export default class BookLayoutComponent {
+  public books: Item[] = [];
+  public valueInput: string = '';
 
-  public books: Item[] = []
-  public valueInput: string = ''
-
-  constructor() {
-
-  }
-
-
+  constructor(private serviceBook: ServiceBook) {}
 
   getValorInput(item: string) {
-    this.valueInput = item
-    console.log(this.valueInput)
+    this.valueInput = item;
+    console.log(this.valueInput);
+
+    // aquí seteas el valor
+    this.serviceBook.setCurrentUser(item);
   }
-
-
-
 }
